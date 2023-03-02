@@ -3,8 +3,6 @@ version: '2'
 services:
   mariadb:
     image: docker.io/bitnami/mariadb:10.6
-    ports:
-      - '3306:3306'
     environment:
       - MARIADB_USER=exam
       - MARIADB_PASSWORD=exam
@@ -15,8 +13,6 @@ services:
   quiz:
     build:
       context: .
-    ports:
-      - '90:90'
     environment:
       - DB_HOST=mariadb
       - DB_USERNAME=exam
